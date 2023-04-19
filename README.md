@@ -5,7 +5,7 @@ Python version of https://github.com/dvaJi/genshin-data.
 ## Installation
 
 ```bash
-pip install git+https://github.com/Victorsitou/genshin-data
+pip install genshin_data
 ```
 
 ## Usage
