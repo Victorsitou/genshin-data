@@ -21,7 +21,7 @@ class Ingredients(BaseModel):
     _id: int
     id: str
     name: str
-    description: Optional[str]  # TODO: es opcional para "Pescado Seco", reportar.
+    description: Optional[str]  # TODO: https://github.com/dvaJi/genshin-data/issues/15
     processing: Optional[List[Item]]
     recipes: Optional[List[Recipe]]
     source: Optional[List[str]]

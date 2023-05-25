@@ -13,13 +13,19 @@ class AscensionMaterial(BaseModel):
 class WeaponAscension(BaseModel):
     ascension: int
     level: int
-    cost: Optional[int]  # NOTE: https://github.com/dvaJi/genshin-data/issues/10
+    cost: Optional[int]
     materials: List[AscensionMaterial]
 
 
 class WeaponRefinement(BaseModel):
     refinement: int
     desc: str
+
+
+class RawWeaponRefinement(BaseModel):
+    template: str
+    params: List[List[str]]
+    name: str  # NOTE: https://github.com/dvaJi/genshin-data/pull/17
 
 
 class StatLevel(BaseModel):
@@ -47,6 +53,7 @@ class Weapon(BaseModel):
     bonus: str
     stats: WeaponStat
     ascensions: List[WeaponAscension]
+    refinement_raw: RawWeaponRefinement
     refinements: List[WeaponRefinement]
 
 
@@ -61,5 +68,6 @@ WeaponFields = Literal[
     "bonus",
     "stats",
     "ascensions",
+    "refinement_raw",
     "refinements",
 ]

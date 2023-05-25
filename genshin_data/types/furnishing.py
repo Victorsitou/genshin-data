@@ -5,24 +5,24 @@ __all__ = ["FurnitureCategory", "FurnitureRecipe", "Furnishing", "FurnishingFiel
 
 
 class FurnitureCategory(BaseModel):
-    # TODO: cambié este modelo
+    # NOTE: https://github.com/dvaJi/genshin-data/pull/17
     id: str
     category: str
     type: Optional[str]
 
 
 class FurnitureRecipe(BaseModel):
-    # TODO: cambié este modelo
+    # NOTE: https://github.com/dvaJi/genshin-data/pull/17
     _id: int
     id: str
     name: str
-    amount: int
+    amount: str
 
 
 class Furnishing(BaseModel):
     _id: int
     id: str
-    originalId: Optional[int]  # TODO: solo aparece una vez en el JSON, issue
+    originalId: Optional[int]  # NOTE: https://github.com/dvaJi/genshin-data/issues/14
     name: str
     description: str
     rarity: int
