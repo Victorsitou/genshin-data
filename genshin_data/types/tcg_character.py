@@ -40,7 +40,7 @@ class Attributes(BaseModel):
     weapon: str
     faction: List[str]
     talent_card: Optional[Entity]
-    source: List[str]
+    source: str
     character: Optional[Entity]
 
 

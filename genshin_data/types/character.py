@@ -56,12 +56,12 @@ class AscensionMaterial(BaseModel):
 
 class AscendStat(BaseModel):
     label: str
-    values: Optional[List[Optional[Union[str, int]]]]  # TODO: issue
+    values: List[Union[str, int]]  # NOTE: https://github.com/dvaJi/genshin-data/pull/17
 
 
 class Ascension(BaseModel):
     level: Tuple[int, int]
-    cost: Optional[int]  # NOTE: https://github.com/dvaJi/genshin-data/issues/10
+    cost: Optional[int]
     stats: List[AscendStat]
     mat1: Optional[AscensionMaterial] = None
     mat2: Optional[AscensionMaterial] = None
@@ -86,16 +86,18 @@ class Character(BaseModel):
     _id: int
     id: str
     name: str
-    title: Optional[str]  # TODO: issue
+    title: Optional[str]  # NOTE: https://github.com/dvaJi/genshin-data/pull/17
     description: str
     weapon_type: str
     element: str
     gender: str
     substat: str
     affiliation: str
-    region: Optional[str]  # NOTE: https://github.com/dvaJi/genshin-data/pull/11
+    region: Optional[str]
     rarity: int
-    birthday: Tuple[Optional[int], Optional[int]]  # TODO: issue
+    birthday: Tuple[
+        Optional[int], Optional[int]
+    ]  # NOTE: https://github.com/dvaJi/genshin-data/pull/17
     constellation: str
     domain: str
     cv: CharacterVoice
